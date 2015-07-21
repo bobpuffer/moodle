@@ -1,0 +1,20 @@
+<?php
+require_once('../../config.php');
+require_once("$CFG->dirroot/repository/morsle/lib.php");
+require_once("$CFG->dirroot/google/lib.php");
+require_once('morsle.php');
+$str = strtolower('64551-NURS-295-A');
+$owner = 'puffro01@luther.edu';
+//$owner = $str . '@luther.edu';
+$title = $str . '-read';
+$morsle = new repository_morsle(1, 'drive', $owner);
+//$morsle->get_token('drive');
+$status = $morsle->m_maintain('64551-NURS-295-A');
+//$status = get_collection($title, $owner, $morsle);
+/*
+$file = "$CFG->dirroot/local/admissions/katie_deposited.csv";
+$filetype = mimeinfo('type', "$CFG->dirroot/local/admissions/katie_deposited.csv");
+$collectionid = '0B9-LjN6v5M_DMmFhZTY5YTUtODAzOS00ZDA3LWI4OGMtYTY4MDQ5ZjhjMWU4';
+$success = send_file_togoogle($morsle, 'katie_deposited.csv', $file, $filetype, $collectionid);
+ * 
+ */
